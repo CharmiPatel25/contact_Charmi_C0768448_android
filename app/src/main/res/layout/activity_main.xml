@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:background="#020000"
+            android:background="#9C27B0"
             android:id="@+id/btnAddPerson"
             android:text="ADD Person"/>
 
