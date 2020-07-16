@@ -73,7 +73,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         ContentValues cv = new ContentValues();
-       
+
 
         cv.put(COLUMN_FNAME,lname);
         cv.put(COLUMN_LNAME,fname);
