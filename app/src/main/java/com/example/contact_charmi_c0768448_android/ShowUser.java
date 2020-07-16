@@ -66,7 +66,8 @@ public class ShowUser extends AppCompatActivity {
                         cursor.getString(1),
                         cursor.getString(2),
                         cursor.getString(3),
-                        cursor.getString(4)));
+                        cursor.getString(4),
+                        cursor.getString(5)));
 
 
             }while (cursor.moveToNext());

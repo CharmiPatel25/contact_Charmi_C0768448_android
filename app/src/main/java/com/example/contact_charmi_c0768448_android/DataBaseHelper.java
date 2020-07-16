@@ -10,15 +10,14 @@ import androidx.annotation.Nullable;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "EmployeeDatabase";
-
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "person";
-
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_FNAME = "fname";
     private static final String COLUMN_LNAME = "lname";
     private static final String COLUMN_PHONE = "phone";
     private static final String COLUMN_ADDRESS = "address";
+    private static final String COLUMN_EMAIL = "email";
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -30,7 +29,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 COLUMN_FNAME + " varchar(200) NOT NULL, " +
                 COLUMN_LNAME + " varchar(200) NOT NULL, " +
                 COLUMN_PHONE + " varchar(20) NOT NULL, " +
-                COLUMN_ADDRESS + " varchar(300) NOT NULL); ";
+                COLUMN_ADDRESS + " varchar(300) NOT NULL," +
+                COLUMN_EMAIL + " varchar(300) NOT NULL); ";
+
         db.execSQL(sql);
 
     }
@@ -43,19 +44,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    boolean addEmployee(String fname, String lname, String phone, String address) {
+    boolean addEmployee(String fname, String lname, String phone, String address,String email) {
 
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-
-
         ContentValues cv = new ContentValues();
-
-
         cv.put(COLUMN_FNAME,lname);
         cv.put(COLUMN_LNAME,fname);
         cv.put(COLUMN_PHONE,phone);
         cv.put(COLUMN_ADDRESS,address);
+        cv.put(COLUMN_EMAIL,email);
 
 
         return  sqLiteDatabase.insert(TABLE_NAME,null,cv)!= 1;
@@ -69,7 +67,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    boolean updatePersonData(int id,String fname,String lname,String phone,String address){
+    boolean updatePersonData(int id,String fname,String lname,String phone,String address,String email){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         ContentValues cv = new ContentValues();
@@ -79,7 +77,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_LNAME,fname);
         cv.put(COLUMN_PHONE,phone);
         cv.put(COLUMN_ADDRESS,address);
-
+        cv.put(COLUMN_EMAIL,email);
         //returns the affected num of rows;
         return  sqLiteDatabase.update(TABLE_NAME,cv,COLUMN_ID+" = ? ",new String[]{String.valueOf(id)}) >0 ;
     }

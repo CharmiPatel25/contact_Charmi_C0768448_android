@@ -37,6 +37,12 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/update_email"
+        android:hint="Enter Email ID"
+        android:textStyle="italic" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/update_Address"
         android:hint="Enter Address Name:"
         android:textStyle="italic"/>

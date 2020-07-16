@@ -40,9 +40,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/etPhone"
-            android:hint="Phone Number📱"
+            android:hint="Phone Number:"
             android:inputType="number"
             android:digits="0123456789"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etEmail"
+            android:hint="Enter Email ID:"
+            android:textStyle="italic"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
