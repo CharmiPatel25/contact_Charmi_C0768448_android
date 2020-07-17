@@ -49,8 +49,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COLUMN_FNAME,lname);
-        cv.put(COLUMN_LNAME,fname);
+        cv.put(COLUMN_FNAME,fname);
+        cv.put(COLUMN_LNAME,lname);
         cv.put(COLUMN_PHONE,phone);
         cv.put(COLUMN_ADDRESS,address);
         cv.put(COLUMN_EMAIL,email);
@@ -73,12 +73,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
 
-        cv.put(COLUMN_FNAME,lname);
-        cv.put(COLUMN_LNAME,fname);
+        cv.put(COLUMN_FNAME,fname);
+        cv.put(COLUMN_LNAME,lname);
         cv.put(COLUMN_PHONE,phone);
         cv.put(COLUMN_ADDRESS,address);
         cv.put(COLUMN_EMAIL,email);
-        //returns the affected num of rows;
         return  sqLiteDatabase.update(TABLE_NAME,cv,COLUMN_ID+" = ? ",new String[]{String.valueOf(id)}) >0 ;
     }
 
