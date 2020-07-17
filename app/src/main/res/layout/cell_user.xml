@@ -58,17 +58,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="#00BCD4"
+            android:background="#4CAF50"
             android:text="Edit"
-            android:textColor="#ECF7F2" />
+            android:textColor="#111211"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="#FF5722"
-            android:text="Delete"/>
+            android:background="#CD3428"
+            android:textStyle="bold"
+            android:text="Delete" />
 
 
 
